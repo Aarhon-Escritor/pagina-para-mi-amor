@@ -1,0 +1,239 @@
+<!<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo con decoraciones -->
+    <div class="background-hearts">
+        <!-- Los corazones se generarán con JS -->
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Cabecera -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">Para Mi Amor</h1>
+                <p class="subtitle">Un rincón especial solo para ti</p>
+                <div class="heart-divider">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sección del mensaje -->
+        <section class="message-section">
+            <h2 class="section-title">
+                <i class="fas fa-heart icon-title"></i>
+                Mi Mensaje Para Ti
+                <i class="fas fa-heart icon-title"></i>
+            </h2>
+            <div class="message-box">
+                <div class="message-content editable" id="messageContent" contenteditable="true">
+            
+                    <p>El Día que Nuestros Caminos se Cruzaron
+                     No sé si fue el destino trazando sus hilos, el azar jugando a favor del amor, o algo más grande que simplemente quiso que nuestros ojos se encontraran. Pero lo que sí sé, con absoluta certeza, es que desde aquel momento, mi vida dejó de ser casualidad para convertirse en propósito. Tú eres mi propósito.</p>
+
+                    <p>De las Palabras a la Eternidad
+                       Recuerdo cuando solo eran conversaciones… aquellas charlas que se alargaban hasta que la noche se rendía. Sin darme cuenta, pasé de esperar tus mensajes a anhelar tu presencia, de admirar tu forma de pensar a enamorarme perdidamente de tu alma. Y así, sin previo aviso, caí. Y no había caída más dulce.</p>
+                    
+                    <p>Esta página es solo un pequeño reflejo de todo lo que siento por ti, un sentimiento tan grande que a veces las palabras se quedan cortas. Espero que a través de estas imágenes y palabras puedas ver lo mucho que te amo.</p>
+                    
+                    <p>Eres mi sueño hecho realidad, mi paz en medio del caos y mi felicidad más grande.</p>
+                    <div class="signature">
+                        <p>Con todo mi amor,</p>
+                        <p class="signature-name">Para siempre</p>
+                    </div>
+                </div>
+                <div class="message-actions">
+                    <button class="btn" id="saveMessage">
+                        <i class="fas fa-save"></i> Guardar Mensaje
+                    </button>
+                    <button class="btn" id="changeFont">
+                        <i class="fas fa-font"></i> Cambiar Estilo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de imágenes -->
+        <section class="gallery-section">
+            <h2 class="section-title">
+                <i class="fas fa-images icon-title"></i>
+                Nuestros Momentos
+                <i class="fas fa-images icon-title"></i>
+            </h2>
+            <p class="section-description">Pasa el cursor sobre las fotos para ver el efecto especial</p>
+            
+            <div class="gallery-controls">
+                <button class="btn btn-small" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-counter">
+                    <span id="currentImage">1</span> / <span id="totalImages">6</span>
+                </div>
+                <button class="btn btn-small" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery" id="imageGallery">
+                    <!-- Las imágenes se cargarán dinámicamente con JS -->
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h3><i class="fas fa-cloud-upload-alt"></i> Agregar Tus Fotos</h3>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-plus-circle upload-icon"></i>
+                    <p>Arrastra tus fotos aquí o haz clic para seleccionar</p>
+                    <input type="file" id="imageUpload" accept="image/*" multiple>
+                </div>
+                <p class="upload-note">Puedes subir imágenes JPG, PNG o GIF</p>
+            </div>
+        </section>
+
+        <!-- Sección de videos -->
+        <section class="videos-section">
+            <h2 class="section-title">
+                <i class="fas fa-video icon-title"></i>
+                Recuerdos en Movimiento
+                <i class="fas fa-video icon-title"></i>
+            </h2>
+            
+            <div class="video-grid" id="videoContainer">
+                <!-- Los videos se cargarán dinámicamente con JS -->
+            </div>
+            
+            <div class="video-upload">
+                <h3><i class="fas fa-film"></i> Agregar Tus Videos</h3>
+                <div class="upload-area" id="videoUploadArea">
+                    <i class="fas fa-video upload-icon"></i>
+                    <p>Arrastra tus videos aquí o haz clic para seleccionar</p>
+                    <input type="file" id="videoUpload" accept="video/*" multiple>
+                </div>
+                <p class="upload-note">Puedes subir videos MP4, MOV o AVI (máx. 50MB)</p>
+            </div>
+        </section>
+
+        <!-- Música y efectos -->
+        <section class="music-section">
+            <h2 class="section-title">
+                <i class="fas fa-music icon-title"></i>
+                Nuestra Canción
+                <i class="fas fa-music icon-title"></i>
+            </h2>
+            
+            <div class="music-player">
+                <div class="song-info">
+                    <h3 id="songTitle">Canción del Amor</h3>
+                    <p id="songArtist">Música romántica para ti</p>
+                </div>
+                
+                <div class="player-controls">
+                    <button class="player-btn" id="prevSongBtn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="player-btn play-btn" id="playBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="player-btn" id="pauseBtn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="player-btn" id="nextSongBtn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button class="player-btn" id="volumeBtn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="volume-container">
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                </div>
+                
+                <div class="song-list">
+                    <h4>Selecciona una canción:</h4>
+                    <div class="songs" id="songList">
+                        <!-- Las canciones se cargarán con JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <audio id="loveSong" preload="metadata"></audio>
+        </section>
+
+        <!-- Efectos especiales -->
+        <section class="effects-section">
+            <h2 class="section-title">
+                <i class="fas fa-magic icon-title"></i>
+                Un Detalle Especial
+                <i class="fas fa-magic icon-title"></i>
+            </h2>
+            
+            <div class="effects-controls">
+                <button class="btn effect-btn" id="heartsEffect">
+                    <i class="fas fa-heart"></i> Lluvia de Corazones
+                </button>
+                <button class="btn effect-btn" id="messageEffect">
+                    <i class="fas fa-comment"></i> Mensaje Secreto
+                </button>
+                <button class="btn effect-btn" id="fireworksEffect">
+                    <i class="fas fa-fire"></i> Fuegos Artificiales
+                </button>
+            </div>
+            
+            <div class="secret-message" id="secretMessage">
+                <p>Eres la persona más increíble que he conocido. Te amo más cada día.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-hearts">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <p class="footer-text">Hecho con todo mi amor especialmente para ti</p>
+                <p class="footer-date">© <span id="currentYear"></span> - Para mi amor eterno</p>
+                <div class="footer-love">
+                    <p class="love-message" id="loveMessage">Cada latido de mi corazón lleva tu nombre</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal para vista ampliada de imágenes -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="Imagen ampliada">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
